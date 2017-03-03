@@ -1,7 +1,7 @@
 #! /usr/bin/env python
-import os
-import random
+#import os
 import pygame
+import random
 
 # it is better to have an extra variable, than an extremely long line.
 player_img_path = 'player.png'
@@ -46,7 +46,7 @@ class Player(pygame.sprite.Sprite):
     def handle_keys(self):
         """ Handles Keys """
         key = pygame.key.get_pressed()
-        dist = 5  # distance moved in 1 frame, try changing it to 5
+        dist = 2  # distance moved in 1 frame, try changing it
         if key[pygame.K_DOWN]:  # down key
             self.rect.y += dist  # move down
         elif key[pygame.K_UP]:  # up key
