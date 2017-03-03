@@ -16,7 +16,7 @@ pygame.font.init()
 
 * Set up a font, try changing the size, Roboto
 
-myfont = pygame.font.SysFont("Comic Sans MS", 30)
+myfont = pygame.font.SysFont("Arial", 30)
 
 * Draw the text to a surface
 * Try changing the 'Hello Dojo;
