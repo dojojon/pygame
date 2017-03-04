@@ -7,7 +7,7 @@ import random
 player_img_path = 'player.png'
 pill_img_path = 'pill.png'
 
-background = pygame.image.load("street.jpg")
+background = pygame.image.load("space.jpg")
 
 # create a group for all the pills
 pillsGroup = pygame.sprite.Group()
