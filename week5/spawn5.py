@@ -2,6 +2,7 @@
 # import os
 import pygame
 import random
+from highscore import is_high_score_and_save
 
 # it is better to have an extra variable, than an extremely long line.
 player_img_path = 'player.png'
@@ -88,6 +89,7 @@ clock = pygame.time.Clock()
 
 score = 0
 is_game_over = False
+is_high_score = False
 time_remaining = 10
 pygame.time.set_timer(pygame.USEREVENT + 1, 1000)
 
@@ -121,6 +123,7 @@ while running:
                 time_remaining = time_remaining - 1
                 if time_remaining == 0:
                     is_game_over = True
+                    is_high_score = is_high_score_and_save(score)
 
     screen.fill((255, 255, 255))  # fill the screen with white
 
@@ -137,6 +140,13 @@ while running:
     screen.blit(textsurface, (5, 25))
 
     if is_game_over:
+
+        if is_high_score:
+            high_score_text = "High Score " + str(score)
+            high_score_surface = myfont.render(
+                high_score_text, True, (255, 255, 0))
+            screen.blit(high_score_surface, (250, 350))
+
         game_over_surface = myfont.render("Game Over", True, (255, 0, 0))
         screen.blit(game_over_surface, (250, 160))
     else:

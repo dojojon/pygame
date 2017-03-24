@@ -30,10 +30,24 @@ def save_high_score(new_high_score):
         print("Unable to save the high score.")
 
 
+def is_high_score_and_save(score):
+
+    # Get the current high score
+    high_score = get_high_score()
+
+    # set variable to true if high score
+    is_high_score = score > high_score
+
+    # Only save score if its a high score
+    if is_high_score:
+        save_high_score(score)
+
+    # return the result
+    return is_high_score
+
+
 def main():
     """ Main program is here. """
-    # Get the high score
-    high_score = get_high_score()
 
     # Get the score from the current game
     current_score = 0
@@ -45,10 +59,10 @@ def main():
         print("I don't understand what you typed.")
 
     # See if we have a new high score
-    if current_score > high_score:
+    if is_high_score_and_save(current_score):
         # We do! Save to disk
         print("Yea! New high score!")
-        save_high_score(current_score)
+        # save_high_score(current_score)
     else:
         print("Better luck next time.")
 
