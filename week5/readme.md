@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Week 5 Highscores and Play Again
+=======
+# Week 5 Highscores, Play Again,  Game States/Scenes
+>>>>>>> 6ff82c012c33e11eccaa96cac3bb7b2b4a28e5b5
 
 ## High scores
 
@@ -69,4 +73,3 @@ if key[pygame.K_SPACE]:
 ### Add this code to randomise the pill start positions
     for pill in pillsGroup:
         pill.warp()
-
