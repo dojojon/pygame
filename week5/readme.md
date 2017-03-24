@@ -1,4 +1,4 @@
-# Week 5 Highscores, Play Again,  Game States/Scenes
+# Week 5 Highscores and Play Again
 
 ## High scores
 
@@ -50,4 +50,23 @@ if is_high_score:
     high_score_surface = myfont.render(
         high_score_text, True, (255, 255, 0))
     screen.blit(high_score_surface, (250, 350))
+
+## Play Again
+
+### Add a message to tell the player what to do
+
+press_to_play_surface = myfont.render("Press Space to Play Again", True, (255, 255, 255))
+screen.blit(press_to_play_surface, (200, 370))
+
+### Add code for a key pressed to space
+key = pygame.key.get_pressed()
+if key[pygame.K_SPACE]:  
+    score = 0
+    is_game_over = False
+    is_high_score = False
+    time_remaining = 10
+    
+### Add this code to randomise the pill start positions
+    for pill in pillsGroup:
+        pill.warp()
 
